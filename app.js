@@ -1,4 +1,4 @@
-
+require('dotenv').config();
 var express				  = require('express'),
 	app					  = express(),
 	bodyParser			  = require('body-parser'),
@@ -19,7 +19,7 @@ var commentRoutes = require('./routes/comments'),
 	indexRoutes = require('./routes/index');
 
 var port = process.env.PORT || 3000;
-var url = process.env.DATABASEURL || "mongodb://localhost:27017/yelp_camp_v12";
+var url = process.env.DATABASEURL;
 
 mongoose.connect(url, {
 	useNewUrlParser: true,
